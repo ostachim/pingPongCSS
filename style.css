@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --racketWidth:3%;
+    --racketHeight:20%;
+    --racketColor:yellow;
+    --racketTop:50%;
+    --racketLeft:6%;
+    
+}
+
+
+.table{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:60vw;
+    height:30vw;
+    background-color:#222;  
+    oferflow:hidden; 
+    
+}
+
+.player{
+    position:absolute;
+    left:var(--racketLeft);
+    top:var(--racketTop);
+    height:var(--racketHeight);
+    width:var(--racketWidth);
+    background-color:var(--racketColor);
+    animation:playerMove 5s infinite both;
+    
+}
+
+.ai{
+    position:absolute;
+    right:var(--racketLeft);
+    top:var(--racketTop);
+    height:var(--racketHeight);
+    width:var(--racketWidth);
+    background-color:var(--racketColor);
+    animation:aiMove 5s infinite both;
+    
+}
+
+.ball{
+    position:absolute;
+    background-color:white;
+    width:20px;
+    height:20px;
+    left:50%;
+    top:50%;
+   
+    border-radius:50%;
+    animation:ballMove 5s linear infinite;
+}
+
+h1{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%) translateY(-100%);
+    COLOR:black;
+    font-size:40px;
+    font-family:arial;
+    text-transform:uppercase;
+    background-color:greenyellow;
+    padding:20px 30px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    animation:textAnim 5s linear infinite both;
+    
+}
+
+@keyframes ballMove{
+    0%{
+        
+
+    }
+    15%{
+        left:calc(100% - var(--racketWidth) - var(--racketLeft) - 20px);
+
+    }
+    30%{
+        left:40%;
+        top:calc(100% - 20px);
+
+    }
+    45%{
+        left:calc(0% + var(--racketWidth) + var(--racketLeft) + 0px);
+        top:40%;
+    }
+    60%{
+        top:calc(0 + 20px);
+
+    }
+    75%{
+        top:10%;
+        left:110%;
+
+    }
+    100%{
+        top:10%;
+        left:110%;
+
+    }
+
+}
+
+@keyframes playerMove{
+    0%{
+        top:40%;
+
+    }
+    15%{
+        top:70%;
+
+    }
+    30%{
+        top:60%;
+
+    }
+    45%{
+        top:35%;
+
+    }
+    60%{
+        top:30%;
+
+    }
+    75%{
+        top:30%; 
+    }
+
+    100%{
+        top:30%;
+    }
+
+}
+
+@keyframes aiMove{
+    0%{
+        top:50%;
+
+    }
+    15%{
+        top:70%;
+
+    }
+    30%{
+        top:80%;
+
+    }
+    45%{
+        top:70%;
+
+    }
+    60%{
+        top:40%;
+
+    }
+    100%{
+        top:10%;
+
+    }
+
+}
+
+@keyframes textAnim{
+    0%{
+        opacity:0;
+
+    }
+    15%{
+        opacity:0;
+
+    }
+    30%{
+        opacity:0;
+
+    }
+    45%{
+        opacity:0;
+
+    }
+    60%{
+        opacity:0;
+
+    }
+    75%{
+        opacity:0;
+
+    }
+    100%{
+        opacity:1;
+
+    }
+}
+
+
+
